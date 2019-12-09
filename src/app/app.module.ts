@@ -7,10 +7,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CrisisListComponent } from "./crisis-list/crisis-list.component";
 import { HeroListComponent } from "./hero-list/hero-list.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
-  imports: [BrowserModule, AppRoutingModule],
-  declarations: [AppComponent, CrisisListComponent, HeroListComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    CrisisListComponent,
+    HeroListComponent,
+    PageNotFoundComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
