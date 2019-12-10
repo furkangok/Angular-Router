@@ -10,10 +10,7 @@ const routes: Routes = [
     path: "crisis-center",
     component: CrisisListComponent
   },
-  {
-    path: "heroes",
-    component: HeroListComponent
-  },
+
   {
     path: "",
     redirectTo: "/heroes",

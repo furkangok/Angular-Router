@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { Observable } from "rxjs";
+import { switchMap } from "rxjs/operators";
 
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
@@ -13,7 +16,11 @@ export class HeroListComponent implements OnInit {
 
   heroes: Hero[];
 
-  constructor(private heroService: HeroService) {}
+  constructor(
+    private heroService: HeroService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.getHeroes();
@@ -21,6 +28,7 @@ export class HeroListComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.router.navigate([`/hero/${this.selectedHero.id}`]);
   }
 
   getHeroes(): void {

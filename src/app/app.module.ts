@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
-import { RouterModule, Routes } from "@angular/router";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -11,7 +11,13 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { HeroesModule } from "./heroes/heroes.module";
 
 @NgModule({
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HeroesModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    HeroesModule,
+    AppRoutingModule
+  ],
   declarations: [AppComponent, CrisisListComponent, PageNotFoundComponent],
   providers: [],
   bootstrap: [AppComponent]
